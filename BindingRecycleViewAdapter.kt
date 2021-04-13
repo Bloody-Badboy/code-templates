@@ -13,11 +13,11 @@ class ${NAME}(private val onItemClick: (${Model}) -> Unit) :
             notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FaqItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ${Model}ViewHolder {
         return ${Model}ViewHolder.create(parent)
     }
 
-    override fun onBindViewHolder(holder: FaqItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ${Model}ViewHolder, position: Int) {
         holder.bind(data[position], onItemClick)
     }
 
@@ -38,7 +38,7 @@ class ${NAME}(private val onItemClick: (${Model}) -> Unit) :
             }
         }
 
-        fun bind(item: ${Model}, onItemClick: (Faq) -> Unit) {
+        fun bind(item: ${Model}, onItemClick: (${Model}) -> Unit) {
             itemView.setOnClickListener {
                 onItemClick(item)
             }
