@@ -13,11 +13,11 @@ class ${NAME} : RecyclerView.Adapter<${NAME}.${Model}ViewHolder>() {
             notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ${Model}ViewHolder =
-        ${Model}ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.${Item_Layout_ID}, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.${Item_Layout_ID}, parent, false))
 
-    override fun onBindViewHolder(holder: ${Model}ViewHolder, position: Int) = holder.bind(data[position])
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(data[position])
+    
     override fun getItemCount() = data.size
 
     class ${Model}ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
